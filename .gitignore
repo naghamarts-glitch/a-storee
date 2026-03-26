@@ -36,6 +36,7 @@ public/build/
 Thumbs.db
 
 ## IDE
+*.code-workspace
 .vscode/*
 !.vscode/extensions.json
 .idea/
