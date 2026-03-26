@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 240 10% 8%;
+    --card: 0 0% 99%;
+    --card-foreground: 240 10% 8%;
+    --popover: 0 0% 99%;
+    --popover-foreground: 240 10% 8%;
+    --primary: 280 70% 50%; /* بنفسجي أساسي */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 75% 55%; /* أزرق مساعد */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 92%;
+    --muted-foreground: 240 7% 45%;
+    --accent: 45 90% 60%; /* ذهبي خفيف */
+    --accent-foreground: 240 10% 8%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 280 70% 50%;
+    --radius: 1rem;
+
+    --glass-bg: 0 0% 100% / 0.08;
+    --glass-border: 280 70% 50% / 0.2;
+    --gradient-primary: linear-gradient(135deg, hsl(280 70% 50%), hsl(220 75% 55%));
+    --gradient-service: linear-gradient(135deg, hsl(280 70% 50% / 0.1), hsl(220 75% 55% / 0.08), hsl(45 90% 60% / 0.05));
+    --shadow-card-hover: 0 40px 80px hsl(280 70% 50% / 0.25);
+    --shadow-featured: 0 50px 100px hsl(280 70% 50% / 0.2);
+    --neon-glow-primary: 0 0 30px hsl(280 70% 50% / 0.5), 0 0 50px hsl(280 70% 50% / 0.25);
+    --service-glow: 0 0 25px hsl(280 70% 50% / 0.3), 0 0 40px hsl(280 70% 50% / 0.15);
+
+    --glass-bg: 0 0% 100% / 0.1;
+    --glass-border: 270 80% 55% / 0.15;
+    --gradient-primary: linear-gradient(135deg, hsl(270 80% 55%), hsl(220 75% 55%));
+    --gradient-subtle: linear-gradient(135deg, hsl(270 80% 55% / 0.08), hsl(220 75% 55% / 0.06));
+    --gradient-hero: linear-gradient(135deg, hsl(270 80% 55% / 0.06), hsl(220 75% 55% / 0.04));
+    --shadow-glow: 0 20px 40px hsl(270 80% 55% / 0.15);
+    --shadow-card: 0 10px 30px hsl(0 0% 0% / 0.08);
+    --shadow-card-hover: 0 20px 50px hsl(270 80% 55% / 0.2);
+    --neon-glow-primary: 0 0 25px hsl(270 80% 55% / 0.4), 0 0 35px hsl(270 80% 55% / 0.2);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 10% 8%;
+    --sidebar-primary: 270 80% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 95%;
+    --sidebar-accent-foreground: 240 10% 8%;
+    --sidebar-border: 0 0% 88%;
+    --sidebar-ring: 270 80% 55%;
+  }
+
+  .dark {
+    --background: 240 10% 5%;
+    --foreground: 0 0% 95%;
+    --card: 240 10% 8%;
+    --card-foreground: 0 0% 95%;
+    --popover: 240 10% 8%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 270 80% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 75% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 10% 15%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 45 90% 55%;
+    --accent-foreground: 240 10% 5%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 270 80% 50%;
+
+    --glass-bg: 0 0% 100% / 0.06;
+    --glass-border: 270 80% 55% / 0.2;
+    --gradient-primary: linear-gradient(135deg, hsl(270 80% 50%), hsl(220 75% 50%));
+    --gradient-subtle: linear-gradient(135deg, hsl(270 80% 50% / 0.1), hsl(220 75% 50% / 0.08));
+    --gradient-hero: linear-gradient(135deg, hsl(270 80% 50% / 0.08), hsl(220 75% 50% / 0.05));
+    --shadow-glow: 0 25px 50px hsl(270 80% 50% / 0.2);
+    --shadow-card: 0 15px 35px hsl(0 0% 0% / 0.3);
+    --shadow-card-hover: 0 25px 60px hsl(270 80% 50% / 0.25);
+    --neon-glow-primary: 0 0 20px hsl(270 80% 50% / 0.5), 0 0 30px hsl(270 80% 50% / 0.25);
+
+    --sidebar-background: 240 10% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 270 80% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 10% 15%;
+    --sidebar-accent-foreground: 240 10% 5%;
+    --sidebar-border: 240 10% 20%;
+    --sidebar-ring: 270 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Cairo', 'Inter', sans-serif;
+  }
+  [dir="rtl"] body {
+    font-family: 'Cairo', sans-serif;
+  }
+  [dir="ltr"] body {
+    font-family: 'Inter', 'Cairo', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-hero {
+    @apply backdrop-blur-[30px] border relative overflow-hidden;
+    background: hsl(var(--glass-bg));
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-card), var(--neon-glow-primary);
+  }
+  .glass-service-card {
+    @apply backdrop-blur-xl border rounded-3xl p-8 relative overflow-hidden;
+    background: hsl(var(--glass-bg));
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-card);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .glass-service-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: var(--shadow-card-hover), 0 0 40px hsl(var(--primary) / 0.3);
+    border-color: hsl(var(--primary) / 0.5);
+  }
+  .service-glow {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.2);
+  }
+  .service-glow:hover {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.4), 0 0 60px hsl(var(--primary) / 0.2);
+  }
+  .btn-service-primary {
+    @apply inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 relative overflow-hidden bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-primary-foreground shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.02];
+    border: 1px solid hsl(var(--primary) / 0.3);
+  }
+  .btn-service-secondary {
+    @apply inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-semibold text-lg border-2 transition-all duration-300 hover:bg-[hsl(var(--primary)/0.1)] hover:shadow-md hover:-translate-y-1 hover:scale-[1.02];
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary));
+    backdrop-filter: blur(10px);
+  }
+  .btn-service-secondary:hover {
+    background: hsl(var(--primary) / 0.1);
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  .featured-service {
+    @apply backdrop-blur-2xl border-2 rounded-3xl p-12 relative overflow-hidden;
+    background: linear-gradient(135deg, hsl(var(--glass-bg)), hsl(var(--primary) / 0.03));
+    border-color: hsl(var(--primary) / 0.4);
+    box-shadow: 0 40px 80px hsl(0 0% 0% / 0.15), 0 0 60px hsl(var(--primary) / 0.25);
+  }
+  .arabic-hero {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 800;
+    font-variation-settings: 'wght' 900;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+  }
+  .glass-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary)), transparent);
+    animation: scan-line 20s linear infinite;
+  }
+  .glass-card {
+    @apply backdrop-blur-xl border rounded-3xl;
+    background: hsl(var(--glass-bg));
+    border-color: hsl(var(--glass-border));
+    box-shadow: var(--shadow-card);
+  }
+  .glass-card:hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+  .gradient-naam {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gradient-bg {
+    background: var(--gradient-primary);
+  }
+  .gradient-accent-bg {
+    background: var(--gradient-accent);
+  }
+  .glow-naam {
+    box-shadow: var(--shadow-glow);
+  }
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  .depth-layer {
+    transform: perspective(1000px) rotateX(5deg);
+    box-shadow: var(--depth-shadow);
+  }
+  .arabic-title {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 800;
+    font-variation-settings: 'wght' 900;
+    letter-spacing: -0.02em;
+  }
+  .neon-button {
+    box-shadow: 0 0 25px hsl(var(--primary) / 0.4);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .neon-button:hover {
+    box-shadow: var(--neon-glow-primary);
+    transform: translateY(-4px) scale(1.02);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
