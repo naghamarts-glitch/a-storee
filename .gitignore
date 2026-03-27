@@ -1,0 +1,50 @@
+# Full-stack Node + Vite + PHP + XAMPP
+
+## Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+## Vite/React
+dist/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+## PHP/XAMPP
+*.log
+xampp/
+htdocs/
+.idea/
+.vscode/settings.json
+
+## Database
+*.sql
+*.db
+config/db.php.bak
+.env
+
+## Build artifacts
+build/
+public/build/
+
+## OS
+.DS_Store
+Thumbs.db
+
+## IDE
+*.code-workspace
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+## Sensitive
+.env*
+*.key
+!.gitignore
+temp_auth.txt

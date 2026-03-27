@@ -1,0 +1,44 @@
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <!-- Background gradient (optional) -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f0e8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e8dcf0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c41e3a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a01830;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main logo group -->
+  <g transform="translate(150, 80)">
+    <!-- Arabic calligraphy style "ن" (Noon) character -->
+    <path d="M -40 -30 Q -30 -50 0 -50 Q 30 -50 40 -30 Q 45 -15 40 5 Q 30 25 0 30 Q -30 25 -40 5 L -35 0 Q -30 15 0 18 Q 25 15 30 5 Q 32 0 30 -10 Q 25 -20 0 -20 Q -15 -20 -25 -10"
+          fill="none" stroke="url(#redGradient)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Alif stroke on the right -->
+    <line x1="35" y1="-40" x2="50" y2="20" stroke="url(#redGradient)" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Decorative elements -->
+    <circle cx="-30" cy="-35" r="3" fill="url(#redGradient)"/>
+    <circle cx="25" cy="-20" r="2.5" fill="#d4a574"/>
+    <circle cx="15" cy="-10" r="2" fill="#d4a574"/>
+    
+    <!-- Star elements -->
+    <g opacity="0.6">
+      <polygon points="55,-5 58,-10 63,-10 59,-14 61,-19 55,-15 49,-19 51,-14 47,-10 52,-10" fill="#d4a574"/>
+      <polygon points="70,15 72,11 77,11 73,7 75,2 70,6 65,2 67,7 63,11 68,11" fill="#d4a574"/>
+    </g>
+  </g>
+  
+  <!-- Company name -->
+  <text x="150" y="160" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#c41e3a">
+    NAGHAM
+  </text>
+  
+  <!-- Arabic subtitle -->
+  <text x="150" y="185" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#1e3a8a" font-weight="500">
+    للفنون والخدمات الطلابية
+  </text>
+</svg>
