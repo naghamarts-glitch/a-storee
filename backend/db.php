@@ -1,14 +1,14 @@
 <?php
-error_reporting(0);
-/**
- * Database Connection File
- * Secure MySQL connection using PDO
- */
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'nagham_art_hub');
-define('DB_USER', 'root'); // Change this to your MySQL username
-define('DB_PASS', '');      // Change this to your MySQL password
+header("Content-Type: application/json");
+
+// بيانات الاتصال
+define('DB_HOST', 'sql309.infinityfree.com');
+define('DB_NAME', 'if0_41570297_nagmarts');
+define('DB_USER', 'if0_41570297');
+define('DB_PASS', 'yDRvPyjPxWojf1');
 
 class Database {
     private $pdo;
@@ -24,8 +24,11 @@ class Database {
         try {
             $this->pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
         } catch (PDOException $e) {
-            http_response_code(500);
-            echo json_encode(['success' => false, 'message' => 'Database connection failed']);
+            // ❗ خطأ آمن (مايظهرش تفاصيل السيرفر)
+            echo json_encode([
+                "success" => false,
+                "message" => "Database connection failed"
+            ]);
             exit;
         }
     }
@@ -35,9 +38,9 @@ class Database {
     }
 }
 
-// Helper function to get database connection
+// دالة جاهزة للاستدعاء
 function getDB() {
     $db = new Database();
     return $db->getConnection();
 }
-
+?>
