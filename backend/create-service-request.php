@@ -11,6 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 require_once 'db.php';
 
+$pdo = getDB();
+
 try {
     $input = json_decode(file_get_contents('php://input'), true);
     
@@ -28,7 +30,7 @@ try {
     }
 
     // Insert into database
-$stmt = $pdo->prepare("INSERT INTO service_requests (name, phone, service_type, details, created_at) VALUES (?, ?, ?, ?, NOW()) ON DUPLICATE KEY UPDATE name=VALUES(name)");
+    $stmt = $pdo->prepare("INSERT INTO service_requests (name, phone, service_type, details, created_at) VALUES (?, ?, ?, ?, NOW()) ON DUPLICATE KEY UPDATE name=VALUES(name)");
     
     if (!$stmt->execute([$name, $phone, $service_type, $details])) {
         throw new Exception('Database error: ' . implode(', ', $pdo->errorInfo()));

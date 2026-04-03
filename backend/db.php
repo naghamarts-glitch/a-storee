@@ -44,3 +44,4 @@ function getDB() {
     return $db->getConnection();
 }
 ?>
+
